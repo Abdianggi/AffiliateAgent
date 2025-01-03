@@ -1,7 +1,9 @@
 import { useState } from "react";
 import hybridIcon from "../assets/hybrid.svg";
+import { useMediaQuery } from "react-responsive";
 
-export default function Nav(){
+export default function Nav() {
+    const isMinMd = useMediaQuery({ query: "(min-width: 768px)" });
     const [showProfileCard, setShowProfileCard] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
@@ -12,76 +14,61 @@ export default function Nav(){
 
     const toggleModal = () => {
         if (isModalOpen) {
-          setIsClosing(true);
-          setTimeout(() => {
-            setIsModalOpen(false);
-            setIsClosing(false);
-          }, 700); // Waktu untuk animasi slide-down
+            setIsClosing(true);
+            setTimeout(() => {
+                setIsModalOpen(false);
+                setIsClosing(false);
+            }, 700); // Waktu untuk animasi slide-down
         } else {
-          setIsModalOpen(true);
+            setIsModalOpen(true);
         }
     };
 
     return (
-        <div className="flex justify-between pt-10 pb-6 px-52 bg-white shadow-gray-300 shadow-md mb-10">
-            <div className="flex">
-                <div className="block mr-12">
-                    <img src={hybridIcon} alt="" />
-                    <div className="text-[#0B8BEE] ml-2">Affiliator System</div>
-                </div>
-                <div className="flex bg-[#F8F8F8] p-3 rounded-sm">
-                    <div className="bg-slate-900 pt-2 pb-1 pl-5 pr-5 text-slate-50 text-center align-middle mr-3">QR <br/> Code</div>
-                    <div className="block">
-                        <div className="font-normal text-sm mb-3">
-                            QR Affiliate Page
-                        </div>
-                        <button className="bg-[#004174] text-white text-sm pt-1 pb-1 pr-2 pl-2 rounded-sm" onClick={toggleModal}>View</button>
-                        {isModalOpen && (
-                            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-10 z-50">
-                            {/* Modal Container */}
-                            <div
-                                className={`bg-transparent rounded-lg grid grid-cols-[1fr_auto] ${
-                                    isClosing ? "animate-slide-down" : "animate-slide-up"
-                                }`}
-                            >   
-                                <div className="bg-white px-5 pb-5 pt-2 rounded-md">
-                                    <div className="flex justify-center">
-                                        <div className="text-md text-center self-center font-semibold mb-4 rounded-md w-28 border-[1px]">
-                                                Affiliate Page
-                                        </div>
-                                    </div>
-                                    <img
-                                        src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&size=500x500"
-                                        alt="QR Code"
-                                        className="mx-auto mb-4 w-72 h-72"
-                                    />
-                                    <div className="flex justify-between">
-                                        <button
-                                            className="bg-[#F9F9F9] text-[#504F4F] text-xs font-medium px-2 py-1 rounded-sm"
-                                        >
-                                            Download
-                                        </button>
-                                        <button
-                                            className="bg-[#0B8BEE] text-white text-xs font-medium px-2 py-1 rounded-sm"
-                                        >
-                                            Print
-                                        </button>
-                                    </div>
-                                </div>
-                                <button
-                                    className="bg-white text-black text-xl self-start ml-2 font-medium px-2 py-1 rounded-md"
-                                    onClick={toggleModal}
-                                >
-                                    &#x2715;
-                                </button>
-                            </div>
-
-                            </div>
-                        )}
+        <div className="flex flex-wrap justify-between items-center py-6 px-6 lg:px-52 md:pb-6 md:pt-10 bg-white shadow-gray-300 shadow-md mb-10">
+            {!isMinMd ? (
+                <>
+                    <div className="items-center mb-4 sm:mb-0">
+                        <img src={hybridIcon} alt="Hybrid Icon" className="mr-3" />
+                        <div className="text-[#0B8BEE] ml-2">Affiliator System</div>
                     </div>
 
+                    <div className="flex items-center bg-[#F8F8F8] p-3 rounded-sm mb-4 sm:mb-0">
+                        <div className="bg-slate-900 pt-2 pb-1 pl-5 pr-5 text-slate-50 text-center align-middle mr-3 hidden md:block">QR <br/> Code</div>
+                        <div>
+                            <div className="text-sm mb-2">QR Affiliate Page</div>
+                            <button
+                                className="bg-[#004174] text-white text-xs px-3 py-1 rounded-sm"
+                                onClick={toggleModal}
+                            >
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </>
+            ) : (
+                <div className="flex">
+                    <div className="items-center mb-4 sm:mb-0 lg:mr-12">
+                        <img src={hybridIcon} alt="Hybrid Icon" className="mr-3" />
+                        <div className="text-[#0B8BEE] ml-2">Affiliator System</div>
+                    </div>
+
+                    <div className="flex items-center bg-[#F8F8F8] p-3 rounded-sm mb-4 sm:mb-0">
+                        <div className="bg-slate-900 pt-2 pb-1 pl-5 pr-5 text-slate-50 text-center align-middle mr-3 hidden md:block">QR <br/> Code</div>
+                        <div>
+                            <div className="text-sm mb-2">QR Affiliate Page</div>
+                            <button
+                                className="bg-[#004174] text-white text-xs px-3 py-1 rounded-sm"
+                                onClick={toggleModal}
+                            >
+                                View
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            )}
+
+            {/* Profile Section */}
             <div className="flex items-start cursor-pointer" onClick={toggleProfileCard}>
                 <div className="block content-center pt-3">
                     <div className="text-[#004174] text-right">Putu Abdi</div>
@@ -96,8 +83,54 @@ export default function Nav(){
                     // alt="Profile" 
                 />
             </div>
+
+            {/* Modal */}
+            {isModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-10 z-50">
+                {/* Modal Container */}
+                <div
+                    className={`bg-transparent rounded-lg grid grid-cols-[1fr_auto] ${
+                        isClosing ? "animate-slide-down" : "animate-slide-up"
+                    }`}
+                >   
+                    <div className="bg-white px-5 pb-5 pt-2 rounded-md">
+                        <div className="flex justify-center">
+                            <div className="text-md text-center self-center font-semibold mb-4 rounded-md w-28 border-[1px]">
+                                    Affiliate Page
+                            </div>
+                        </div>
+                        <img
+                            src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&size=500x500"
+                            alt="QR Code"
+                            className="mx-auto mb-4 w-72 h-72"
+                        />
+                        <div className="flex justify-between">
+                            <button
+                                className="bg-[#F9F9F9] text-[#504F4F] text-xs font-medium px-2 py-1 rounded-sm"
+                            >
+                                Download
+                            </button>
+                            <button
+                                className="bg-[#0B8BEE] text-white text-xs font-medium px-2 py-1 rounded-sm"
+                            >
+                                Print
+                            </button>
+                        </div>
+                    </div>
+                    <button
+                        className="bg-white text-black text-xl self-start ml-2 font-medium px-2 py-1 rounded-md"
+                        onClick={toggleModal}
+                    >
+                        &#x2715;
+                    </button>
+                </div>
+
+                </div>
+            )}
+
+            {/* Profile Card */}
             {showProfileCard && (
-                <div className="absolute top-[7rem] right-[13rem] bg-white shadow-[0_0_20px_rgba(0,0,0,0.2)] w-64 rounded-md">
+                <div className="absolute top-[7rem] sm:right-[13rem] bg-white shadow-[0_0_20px_rgba(0,0,0,0.2)] w-64 rounded-md z-10">
                     {/* Bagian Header */}
                     <div className="border-b py-2 px-3 rounded-t-md flex justify-between">
                         <div className="text-sm font-normal">Account</div>
@@ -128,7 +161,6 @@ export default function Nav(){
                     </div>
                 </div>
             )}
-
         </div>
     );
 }
