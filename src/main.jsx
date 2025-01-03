@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+
 import './index.css'
 // import App from './App.jsx'
 import Dashboard from './feature/dashboard.jsx';
@@ -12,13 +13,11 @@ import BankInformation from './feature/BankInformation.jsx';
 import VerificationDone from './feature/VerificationDone.jsx';
 import AffiliatorProfile from './feature/AffiliatorProfile.jsx';
 import Login from './feature/Login.jsx';
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
-
         <Route path="/" element={<VerifyInformation />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/booking" element={<Booking />} />
@@ -26,6 +25,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="/affiliator-profile" element={<AffiliatorProfile />} />
         <Route path="/add-reseller" element={<AddReseller />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   </StrictMode>
 )
