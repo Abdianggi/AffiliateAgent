@@ -25,7 +25,7 @@ export default function Nav() {
     };
 
     return (
-        <div className="flex flex-wrap justify-between items-center py-6 px-6 lg:px-52 md:pb-6 md:pt-10 bg-white shadow-gray-300 shadow-md mb-10">
+        <div className="flex flex-wrap justify-between items-center py-6 px-6 lg:px-20 xl:px-52 md:pb-6 md:pt-10 bg-white shadow-gray-300 shadow-md mb-10">
             {!isMinMd ? (
                 <>
                     <div className="items-center text-xs sm:text-md mb-4 sm:mb-0">

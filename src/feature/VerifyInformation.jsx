@@ -5,6 +5,7 @@ import { useState } from "react";
 import BankInformation from "./BankInformation";
 import VerificationDone from "./VerificationDone";
 import { useNavigate } from "react-router-dom";
+import Stepper from "../component/Stepper";
 
 export default function VerifyInformation() {
     const [step, setStep] = useState(1);
@@ -17,36 +18,23 @@ export default function VerifyInformation() {
     const renderStepContent = () => {
         switch(step) {
             case 1: 
+
+                const steps = [
+                    { title: 'ID Verification', active: true },
+                    { title: 'Bank Information', active: false },
+                    { title: 'Done', active: false },
+                ];
+                
                 return (
                     <div>
-                        <div className="flex justify-between mb-14">
-                            <div className="text-2xl font-medium flex text-[#004174]">
+                        <div className="block sm:flex sm:justify-between mb-14">
+                            <div className="text-sm sm:text-2xl font-medium flex text-[#004174]">
                                 Verify your Information
                             </div>
-                            <div className="text-sm font-light text-[#3EA31A] bg-[#3EA31A0A] border-[1px] border-[#3EA31A] py-2 px-5 rounded-lg">All data is safety stored and encrypted</div>
+                            <div className="text-xs w-60 text-center mt-2 sm:mt-0 sm:w-auto sm:text-sm font-light text-[#3EA31A] bg-[#3EA31A0A] border-[1px] border-[#3EA31A] py-1 px-2 sm:py-2 sm:px-5 rounded-lg">All data is safety stored and encrypted</div>
                         </div>
 
-                        <div className="flex items-center justify-between mb-6 px-9 border-dashed border-b-2 pb-7">
-                            {/* Step 1 */}
-                            <div className="flex flex-col items-center">
-                                <div className="w-8 h-8 bg-[#3EA31A] text-white rounded-full flex items-center justify-center mb-2">1</div>
-                                <span className="text-sm font-light">ID Verification</span>
-                            </div>
-                            <div className="flex-1 h-0.5 bg-gray-300 mb-7"></div>
-                            
-                            {/* Step 2 */}
-                            <div className="flex flex-col items-center">
-                                <div className="w-8 h-8 bg-gray-300 text-white rounded-full flex items-center justify-center mb-2">2</div>
-                                <span className="text-sm font-light">Bank Information</span>
-                            </div>
-                            <div className="flex-1 h-0.5 bg-gray-300 mb-7"></div>
-                            
-                            {/* Step 3 */}
-                            <div className="flex flex-col items-center ml-8">
-                                <div className="w-8 h-8 bg-gray-300 text-white rounded-full flex items-center justify-center mb-2">3</div>
-                                <span className="text-sm font-light">Done</span>
-                            </div>
-                        </div>
+                        <Stepper steps={steps} />
 
                         <form>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -87,7 +75,7 @@ export default function VerifyInformation() {
                                 {/* Kolom Kanan */}
                                 <div>
                                     <div className="flex justify-between mb-2">
-                                        <label className="block text-gray-700 text-sm font-normal mb-2">
+                                        <label className="block text-gray-700 text-xs sm:text-sm font-normal mb-2">
                                             Take a Photo of your ID Card
                                         </label>
                                         <div className="">
@@ -114,7 +102,7 @@ export default function VerifyInformation() {
                                                 <i class="fa-regular fa-credit-card"></i>
                                             </div>
                                         </button>
-                                        <p className="text-[#0B8BEE] text-xs font-light mt-2">JPG PNG PDF</p>
+                                        <p className="text-[#0B8BEE] text-xs font-light mt-2">JPG | PNG | PDF</p>
                                         </div>
                                 </div>
                             </div>
@@ -124,7 +112,7 @@ export default function VerifyInformation() {
                                 <button
                                     type="button"
                                     onClick={() => setStep(2)}
-                                    className="py-3 px-9 mt-6 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="py-1 px-3 font-medium text-sm sm:text-md sm:py-3 sm:px-9 mt-6 sm:font-semibold bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     
                                 >
                                     Verification
@@ -146,15 +134,15 @@ export default function VerifyInformation() {
         <div className="bg-[#F6F6F6] min-h-screen">
             <Nav />
             <Tabs disabled/>
-            <div className="px-2 md:px-52 bg-transparent pb-20">
-                <div className="bg-[#E8F3FC] px-20 border-t-[0.4rem] border-[#1B8BE3] pt-10 pb-20 rounded-t-[1.5rem] shadow-md grid grid-cols-3 gap-2">
-                    <div className="text-lg font-semibold mb-4 flex items-center text-[#00000082]">Affiliate Overview</div>
-                    <div className="col-span-2 flex space-x-2">
+            <div className="px-2 lg:px-20 xl:px-52 bg-transparent pb-20">
+                <div className="bg-[#E8F3FC] px-4 sm:px-10 md:px-20 border-t-[0.4rem] border-[#1B8BE3] pt-10 pb-20 rounded-t-[1.5rem] shadow-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="text-lg font-semibold mb-4 flex items-center text-[#00000065]">Affiliate Overview</div>
+                    <div className="col-span-1 sm:col-span-2 flex flex-col sm:flex-row sm:space-x-2 gap-2">
                         <CardBasic color="#004174" title="All Booking" subtitle="-" value="0" disabled/>
                         <CardBasic color="#0B8BEE" title="All Transaction" subtitle="-" value="IDR 0" disabled/>
                     </div>
                 </div>
-                <div className="bg-[#FFFFFF] px-40 py-10 rounded-[1.5rem] shadow-md mt-[-1.5rem]">
+                <div className="bg-[#FFFFFF] px-5 lg:px-20 py-10 rounded-[1.5rem] shadow-md mt-[-1.5rem]">
                     {renderStepContent()}
                 </div>
             </div>

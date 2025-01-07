@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import bankData from '../data/indonesianBanks.json'
 import Select from 'react-select';
+import Stepper from '../component/Stepper';
 export default function BankInformation({onBack, onContinue}) {
+    const steps = [
+        { title: 'ID Verification', active: true },
+        { title: 'Bank Information', active: true },
+        { title: 'Done', active: false },
+    ];
+    
     const options = bankData.map((bank) => ({
         value: bank.code,
         label: bank.name,
@@ -34,37 +41,16 @@ export default function BankInformation({onBack, onContinue}) {
 
     return (
         <div >
-            <div className="flex justify-between mb-14">
-                <div className="text-2xl font-medium flex text-[#004174]">
+            <div className="block sm:flex sm:justify-between mb-14">
+                <div className="text-sm sm:text-2xl font-medium flex text-[#004174]">
                     Verify your Information
                 </div>
-                <div className="text-sm font-light text-[#3EA31A] bg-[#3EA31A0A] border-[1px] border-[#3EA31A] py-2 px-5 rounded-lg">All data is safety stored and encrypted</div>
+                <div className="text-xs w-60 text-center mt-2 sm:mt-0 sm:w-auto sm:text-sm font-light text-[#3EA31A] bg-[#3EA31A0A] border-[1px] border-[#3EA31A] py-1 px-2 sm:py-2 sm:px-5 rounded-lg">All data is safety stored and encrypted</div>
             </div>
 
-            <div className="flex items-center justify-between mb-6 px-9 border-dashed border-b-2 pb-7">
-                {/* Step 1 */}
-                <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 bg-[#3EA31A] text-white rounded-full flex items-center justify-center mb-2">1</div>
-                    <span className="text-sm font-light">ID Verification</span>
-                </div>
-                <div className="flex-1 h-0.5 bg-[#3EA31A] mb-7"></div>
-                
-                {/* Step 2 */}
-                <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 bg-[#3EA31A] text-white rounded-full flex items-center justify-center mb-2">2</div>
-                    <span className="text-sm font-light">Bank Information</span>
-                </div>
-                <div className="flex-1 h-0.5 bg-gray-300 mb-7"></div>
-                
-                {/* Step 3 */}
-                <div className="flex flex-col items-center ml-8">
-                    <div className="w-8 h-8 bg-gray-300 text-white rounded-full flex items-center justify-center mb-2">3</div>
-                    <span className="text-sm font-light">Done</span>
-                </div>
-            </div>
-
+            <Stepper steps={steps}/>
             <form>
-                <div className="px-48">
+                <div className="px-9 sm:px-32 md:px-48">
                     <div className="mb-4">
                         <label
                             className="block text-gray-700 text-sm font-light mb-2"
@@ -118,7 +104,7 @@ export default function BankInformation({onBack, onContinue}) {
                     <button
                         type="button"
                         onClick={onContinue}
-                        className="py-3 px-9 mt-6 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="py-1 px-3 font-medium text-sm sm:text-md sm:py-3 sm:px-9 mt-6 sm:font-semibold bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         
                     >
                         Continue
