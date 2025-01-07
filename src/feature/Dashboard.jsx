@@ -10,15 +10,15 @@ export default function Dashboard() {
         <div className="bg-[#F6F6F6] min-h-screen">
             <Nav />
             <Tabs />
-            <div className="px-52 bg-transparent pb-20">
-                <div className="bg-[#E8F3FC] px-20 border-t-[0.4rem] border-[#1B8BE3] pt-10 pb-20 rounded-t-[1.5rem] shadow-md grid grid-cols-3 gap-2">
+           <div className="px-2 lg:px-20 xl:px-52 bg-transparent pb-20">
+                <div className="bg-[#E8F3FC] px-4 sm:px-10 md:px-20 border-t-[0.4rem] border-[#1B8BE3] pt-10 pb-20 rounded-t-[1.5rem] shadow-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="text-lg font-semibold mb-4 flex items-center">Affiliate Overview</div>
-                    <div className="col-span-2 flex space-x-2">
+                    <div className="col-span-1 sm:col-span-2 flex flex-col sm:flex-row sm:space-x-2 gap-2">
                         <CardBasic color="#004174" title="All Booking" subtitle="1 Sep 2024 - 27 Sep 2024" value="55"/>
                         <CardBasic color="#0B8BEE" title="All Transaction" subtitle="1 Sep 2024 - 27 Sep 2024" value="IDR 7.750.000"/>
                     </div>
                 </div>
-                <div className="bg-[#FFFFFF] px-20 py-10 rounded-[1.5rem] shadow-md mt-[-1.5rem]">
+                <div className="bg-[#FFFFFF] px-2 lg:px-20 py-10 rounded-[1.5rem] shadow-md mt-[-1.5rem]">
                     <div className="flex justify-between mb-8">
                         <div className="text-lg font-semibold">Affiliate : </div>
                         <Link
@@ -44,8 +44,8 @@ export default function Dashboard() {
                     <CardAffiliate
                         status="Active"
                         statusColor="#3EA31A"
-                        companyName="Wahana Fastboat"
-                        resellerId="AFLSV001001WHF"
+                        companyName="Rocky Fast Cruise"
+                        resellerId="AFLSV001001RCF"
                         qrText="QR Reseller Page"
                         qrColor="#0B8BEE"
                         details={[
@@ -57,8 +57,8 @@ export default function Dashboard() {
                     <CardAffiliate
                         status="Active"
                         statusColor="#3EA31A"
-                        companyName="Wahana Fastboat"
-                        resellerId="AFLSV001001WHF"
+                        companyName="Rocky Fast Cruise"
+                        resellerId="AFLSV001001RCF"
                         qrText="QR Reseller Page"
                         qrColor="#0B8BEE"
                         details={[

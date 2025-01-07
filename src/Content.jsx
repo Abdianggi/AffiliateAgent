@@ -32,7 +32,7 @@ export default function Content() {
         {activeTab === "dashboard" && <Dashboard />}
         {activeTab === "booking" && (
             <div className="px-52 bg-transparent">
-                <div className="bg-white px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-t-[1.5rem] relative z-20 shadow-md">
+                <div className="bg-white px-5  lg:px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-t-[1.5rem] relative z-20 shadow-md">
                     <div>Booking</div>
                 </div>
             </div>
@@ -40,7 +40,7 @@ export default function Content() {
         {activeTab === "withdrawal" && <div>Withdrawal Content</div>}
         {activeTab === "affiliator" && (
             <div className="px-52 bg-transparent">
-                <div className="bg-white px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-t-[1.5rem] relative z-20 shadow-md">
+                <div className="bg-white px-5  lg:px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-t-[1.5rem] relative z-20 shadow-md">
                     <h1 className="text-xl font-bold">Affiliator Profile</h1>
                     <div className="mt-4">
                     <p>Nama: Sinta Valela</p>

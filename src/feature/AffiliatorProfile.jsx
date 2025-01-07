@@ -114,8 +114,8 @@ export default function AffiliatorProfile(){
 
            <Nav />
            <Tabs />
-           <div className="px-52 bg-transparent pb-20">
-                <div className="bg-white px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-[1.5rem] shadow-md">
+           <div className="px-2 lg:px-20 xl:px-52 bg-transparent pb-20">
+                <div className="bg-white px-5  lg:px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-[1.5rem] shadow-md">
                     <div className="text-2xl font-medium flex mb-9">
                         <div className="w-1 h-8 mr-2 bg-[#1B8BE3] rounded-r-full"></div>
                         Affiliator Profile

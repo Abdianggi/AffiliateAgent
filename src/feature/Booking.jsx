@@ -32,16 +32,16 @@ export default function Booking() {
         <div className="bg-[#F6F6F6] min-h-screen">
             <Nav />
             <Tabs />
-            <div className="px-52 bg-transparent pb-20">
-                <div className="bg-white px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-[1.5rem] shadow-md">
-                    <div className="text-2xl font-medium flex mb-2">
-                        <div className="w-1 h-8 mr-2 bg-[#1B8BE3] rounded-r-full"></div>
+            <div className="px-2 lg:px-20 xl:px-52 bg-transparent pb-20">
+                <div className="bg-white px-5  lg:px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-[1.5rem] shadow-md">
+                    <div className="text-xl sm:text-2xl font-medium flex mb-2">
+                        <div className="w-1 h-6 sm:h-8 mr-2 bg-[#1B8BE3] rounded-r-full"></div>
                         Booking Summary
                     </div>
-                    <div className="text-sm font-light px-2 py-1 inline-block rounded-sm text-[#0B8BEE] bg-[#0B8BEE1A] mb-8">Rocky Fast Cruise</div>
+                    <div className="text-xs sm:text-sm font-light px-2 py-1 inline-block rounded-sm text-[#0B8BEE] bg-[#0B8BEE1A] mb-8">Rocky Fast Cruise</div>
 
-                    <div className="flex items-center space-x-4 mb-6 bg-[#F6F6F6] px-6 py-4">
-                        <div className="flex flex-col space-y-1">
+                    <div className="sm:flex sm:items-center sm:space-x-4 mb-6 bg-[#F6F6F6] px-6 py-4">
+                        <div className="flex flex-col space-y-1 mt-4 sm:mt-0">
                             <label htmlFor="fromDate" className="text-xs text-black">
                                 From
                             </label>
@@ -51,7 +51,7 @@ export default function Booking() {
                                 className="border border-gray-300 rounded px-2 py-1 text-sm font-extralight"
                             />
                         </div>
-                        <div className="flex flex-col space-y-1">
+                        <div className="flex flex-col space-y-1 mt-4 sm:mt-0">
                             <label htmlFor="toDate" className="text-xs text-black">
                                 To
                             </label>
@@ -61,7 +61,7 @@ export default function Booking() {
                                 className="border border-gray-300 rounded px-2 py-1 text-sm font-extralight"
                             />
                         </div>
-                        <div className="flex flex-col flex-grow space-y-1">
+                        <div className="flex flex-col flex-grow space-y-1 mt-4 sm:mt-0">
                             <label htmlFor="searchInput" className="text-xs text-black">
                                 Search
                             </label>
@@ -72,12 +72,12 @@ export default function Booking() {
                                 className="w-full border border-gray-300 rounded px-2 py-1 text-sm font-extralight"
                             />
                         </div>
-                        <div className="flex items-end">
-                            <button className="bg-[#004174] text-white px-9 py-[0.4rem] rounded text-xs font-extralight mt-5 flex">
+                        <div className="flex items-end justify-end">
+                            <button className="bg-[#004174] text-white px-2 sm:px-9 py-[0.4rem] rounded text-xs font-extralight mt-5 flex">
                                 <svg
                                     width="13"
                                     height="13"
-                                    className="mt-[0.1rem] mr-1"
+                                    className="sm:mt-[0.1rem] mr-1"
                                     viewBox="0 0 13 13"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ export default function Booking() {
                         </div>
                     </div>
 
-                    <div className="flex space-x-3">
+                    <div className="sm:flex sm:space-x-3">
                         {/* Sidebar Section */}
                         <div className="">
                             {/* Status Section */}
@@ -115,7 +115,7 @@ export default function Booking() {
 
                         {/* Table Section */}
                         <div className="w-full">
-                            <div className="bg-white rounded-sm shadow overflow-hidden">
+                            <div className="bg-white rounded-sm shadow overflow-x-auto">
                                 <table className="w-full text-left border-collapse">
                                     <thead className="bg-[#0000001A] border-b text-xs text-black">
                                         <tr>
