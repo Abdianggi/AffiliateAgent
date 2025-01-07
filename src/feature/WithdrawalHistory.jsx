@@ -30,20 +30,20 @@ export default function WithdrawalHistory(){
     const { totalAmount, totalFee } = calculateTotal();
     return (
         <div>
-        <p className="text-sm mb-3">The withdrawal amount will be effective in your bank account maximum 2 business days after submitted.</p>
-        <div className="flex items-center space-x-4 bg-[#F6F6F6] px-6 py-4">
-            <div>
-                <label htmlFor="fromDate" className="text-xs text-black mr-3 text-center align-middle font-medium">
+        <p className="text-xs sm:text-sm mb-3 sm:mb-0">The withdrawal amount will be effective in your bank account maximum 2 business days after submitted.</p>
+                        
+        <div className="sm:flex sm:items-center sm:space-x-4 mb-6 sm:mb-0 bg-[#F6F6F6] px-6 py-4">
+            <div className="flex flex-col space-y-1 mt-4 sm:inline-block sm:mt-0">
+                <label htmlFor="fromDate" className="text-xs text-black mr-3 font-medium">
                     Booking date from :
                 </label>
                 <input
                     type="date"
                     id="fromDate"
                     className="border border-gray-300 rounded px-2 py-1 text-sm font-extralight"
-                    oninput="this.value = this.value.split('-').join('-')"
                 />
             </div>
-            <div>
+            <div className="flex flex-col space-y-1 sm:inline-block mt-4 sm:mt-0">
                 <label htmlFor="toDate" className="text-xs text-black mr-3 font-medium">
                     To :
                 </label>
@@ -53,12 +53,12 @@ export default function WithdrawalHistory(){
                     className="border border-gray-300 rounded px-2 py-1 text-sm font-extralight"
                 />
             </div>
-            <div className="flex items-end">
-                <button className="bg-[#004174] text-white px-5 py-[0.4rem] rounded text-xs font-extralight flex">
+            <div className="flex items-end justify-end">
+                <button className="bg-[#004174] text-white px-2 sm:px-9 py-[0.4rem] rounded text-xs font-extralight mt-1 flex">
                     <svg
                         width="13"
                         height="13"
-                        className="mt-[0.1rem] mr-1"
+                        className="sm:mt-[0.1rem] mr-1"
                         viewBox="0 0 13 13"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
@@ -75,54 +75,57 @@ export default function WithdrawalHistory(){
                 </button>
             </div>
         </div>
-        <table className="table table-bordered w-full text-sm mb-9 border border-gray-300">
-            <thead>
-                <tr className="bg-[#EEEEEE] font-semibold">
-                    <th className="p-3 border-[1.5px] border-r-0">Date</th>
-                    <th className="p-3 border-[1.5px] border-r-0 text-center">Code #</th>
-                    <th className="p-3 border-[1.5px] border-r-0 text-center" colSpan={2}>
-                        Amount
-                    </th>
-                    <th className="p-3 border-[1.5px] border-r-0">Commission Fee</th>
-                    <th className="p-3 border-[1.5px] border-r-0">Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                {data.map((item) => (
-                    <tr key={item.id}>
-                        <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">{item.date}</td>
-                        <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">
-                            <p className="text-[#1C77BF] font-medium">{item.code}</p>
-                        </td>
-                        <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">IDR</td>
-                        <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">{item.amount.toLocaleString()}</td>
-                        <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">{item.fee.toLocaleString()}</td>
-                        <td className="p-3 border-[1.5px] font-light text-center">
-                            <span
-                                className={`py-1 px-5 rounded-full ${
-                                    item.status === "Settled"
-                                    ? "bg-[#3EA31A1A] text-[#3EA31A]"
-                                    : item.status === "Processed"
-                                    ? "bg-[#FF99001A] text-[#FF9900]"
-                                    : "bg-[#A31A1A1A] text-[#A31A1A]"
-                                }`}
-                            >
-                            {item.status}
-                            </span>
-                        </td>
+
+        <div className="overflow-x-auto">
+            <table className="table table-bordered w-full text-xs sm:text-sm mb-9 border border-gray-300">
+                <thead>
+                    <tr className="bg-[#EEEEEE] font-semibold">
+                        <th className="p-3 border-[1.5px] border-r-0">Date</th>
+                        <th className="p-3 border-[1.5px] border-r-0 text-center">Code #</th>
+                        <th className="p-3 border-[1.5px] border-r-0 text-center" colSpan={2}>
+                            Amount
+                        </th>
+                        <th className="p-3 border-[1.5px] border-r-0">Commission Fee</th>
+                        <th className="p-3 border-[1.5px] border-r-0">Status</th>
                     </tr>
-                ))}
-            </tbody>
-            <tfoot>
-                <tr><td className="p-4" colSpan={6}></td></tr>
-                <tr>
-                    <td className="p-3 border-[1.5px] font-medium text-right" colSpan={4}>
-                        TOTAL (IDR)
-                    </td>
-                    <td className="p-3 border-[1.5px] font-semibold text-center" colSpan={2}>{totalFee.toLocaleString()}</td>
-                </tr>
-            </tfoot>
-        </table>
+                </thead>
+                <tbody>
+                    {data.map((item) => (
+                        <tr key={item.id}>
+                            <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">{item.date}</td>
+                            <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">
+                                <p className="text-[#1C77BF] font-medium">{item.code}</p>
+                            </td>
+                            <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">IDR</td>
+                            <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">{item.amount.toLocaleString()}</td>
+                            <td className="p-3 border-[1.5px] bg-[#0B8BEE1A] font-light text-center">{item.fee.toLocaleString()}</td>
+                            <td className="p-3 border-[1.5px] font-light text-center">
+                                <span
+                                    className={`py-1 px-5 rounded-full ${
+                                        item.status === "Settled"
+                                        ? "bg-[#3EA31A1A] text-[#3EA31A]"
+                                        : item.status === "Processed"
+                                        ? "bg-[#FF99001A] text-[#FF9900]"
+                                        : "bg-[#A31A1A1A] text-[#A31A1A]"
+                                    }`}
+                                >
+                                {item.status}
+                                </span>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+                <tfoot>
+                    <tr><td className="p-4" colSpan={6}></td></tr>
+                    <tr>
+                        <td className="p-3 border-[1.5px] font-medium text-right" colSpan={4}>
+                            TOTAL (IDR)
+                        </td>
+                        <td className="p-3 border-[1.5px] font-semibold text-center" colSpan={2}>{totalFee.toLocaleString()}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>           
     </div>
     );
 }

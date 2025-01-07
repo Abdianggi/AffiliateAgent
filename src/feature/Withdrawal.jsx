@@ -79,10 +79,11 @@ export default function Withdrawal(){
                 const { totalAmount, totalFee } = calculateTotal();
                 return (
                     <div>
-                        <p className="text-sm mb-3">The withdrawal amount will be effective in your bank account maximum 2 business days after submitted.</p>
-                        <div className="flex items-center space-x-4 bg-[#F6F6F6] px-6 py-4">
-                            <div>
-                                <label htmlFor="fromDate" className="text-xs text-black mr-3 text-center align-middle font-medium">
+                        <p className="text-xs sm:text-sm mb-3 sm:mb-0">The withdrawal amount will be effective in your bank account maximum 2 business days after submitted.</p>
+                        
+                        <div className="sm:flex sm:items-center sm:space-x-4 mb-6 sm:mb-0 bg-[#F6F6F6] px-6 py-4">
+                            <div className="flex flex-col space-y-1 mt-4 sm:inline-block sm:mt-0">
+                                <label htmlFor="fromDate" className="text-xs text-black mr-3 font-medium">
                                     Booking date from :
                                 </label>
                                 <input
@@ -91,7 +92,7 @@ export default function Withdrawal(){
                                     className="border border-gray-300 rounded px-2 py-1 text-sm font-extralight"
                                 />
                             </div>
-                            <div>
+                            <div className="flex flex-col space-y-1 sm:inline-block mt-4 sm:mt-0">
                                 <label htmlFor="toDate" className="text-xs text-black mr-3 font-medium">
                                     To :
                                 </label>
@@ -101,12 +102,12 @@ export default function Withdrawal(){
                                     className="border border-gray-300 rounded px-2 py-1 text-sm font-extralight"
                                 />
                             </div>
-                            <div className="flex items-end">
-                                <button className="bg-[#004174] text-white px-5 py-[0.4rem] rounded text-xs font-extralight flex">
+                            <div className="flex items-end justify-end">
+                                <button className="bg-[#004174] text-white px-2 sm:px-9 py-[0.4rem] rounded text-xs font-extralight mt-1 flex">
                                     <svg
                                         width="13"
                                         height="13"
-                                        className="mt-[0.1rem] mr-1"
+                                        className="sm:mt-[0.1rem] mr-1"
                                         viewBox="0 0 13 13"
                                         fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -123,60 +124,64 @@ export default function Withdrawal(){
                                 </button>
                             </div>
                         </div>
-                        <table className="table table-bordered w-full text-sm mb-9 border border-gray-300">
-                            <thead>
-                                <tr className="bg-[#EEEEEE] font-semibold">
-                                    <th className="p-3 border-[1.5px] border-r-0">
-                                        <input type="checkbox" checked={checkAll} onChange={handleCheckAll} />
-                                    </th>
-                                    <th className="p-3 border-[1.5px] border-r-0">Booking Date</th>
-                                    <th className="p-3 border-[1.5px] border-r-0 text-start">Order #</th>
-                                    <th className="p-3 border-[1.5px] border-r-0 text-center" colSpan={2}>
-                                        Amount
-                                    </th>
-                                    <th className="p-3 border-[1.5px] border-r-0">Commission Fee</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {data.map((item) => (
-                                    <tr key={item.id}>
-                                        <td className="p-3 border-[1.5px] font-light text-center">
-                                            <input
-                                                type="checkbox"
-                                                checked={checkboxState[item.id] || false}
-                                                onChange={() => handleCheckboxChange(item.id)}
-                                            />
-                                        </td>
-                                        <td className="p-3 border-[1.5px] font-light">{item.bookingDate}</td>
-                                        <td className="p-3 border-[1.5px] font-light text-center">
-                                            <p className="text-[#1C77BF] font-medium">{item.order}</p>
-                                            {item.name}
-                                        </td>
-                                        <td className="p-3 border-[1.5px] font-light text-center">IDR</td>
-                                        <td className="p-3 border-[1.5px] font-light text-center">{item.amount.toLocaleString()}</td>
-                                        <td className="p-3 border-[1.5px] font-light text-center">{item.fee.toLocaleString()}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                            <tfoot>
-                                <tr><td className="p-4" colSpan={6}></td></tr>
-                                <tr>
-                                    <td className="p-3 border-[1.5px] font-medium text-right" colSpan={4}>
-                                        TOTAL (IDR)
-                                    </td>
-                                    <td className="p-3 border-[1.5px] font-semibold text-center">{totalAmount.toLocaleString()}</td>
-                                    <td className="p-3 border-[1.5px] font-semibold text-center">{totalFee.toLocaleString()}</td>
-                                </tr>
-                            </tfoot>
-                        </table>
 
-                        <div>
+                        <div className="overflow-x-auto mb-9">
+                            <table className="table table-bordered w-full text-xs sm:text-sm border border-gray-300">
+                                <thead>
+                                    <tr className="bg-[#EEEEEE] font-semibold">
+                                        <th className="p-3 border-[1.5px] border-r-0">
+                                            <input type="checkbox" checked={checkAll} onChange={handleCheckAll} />
+                                        </th>
+                                        <th className="p-3 border-[1.5px] border-r-0">Booking Date</th>
+                                        <th className="p-3 border-[1.5px] border-r-0 text-start">Order #</th>
+                                        <th className="p-3 border-[1.5px] border-r-0 text-center" colSpan={2}>
+                                            Amount
+                                        </th>
+                                        <th className="p-3 border-[1.5px] border-r-0">Commission Fee</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {data.map((item) => (
+                                        <tr key={item.id}>
+                                            <td className="p-3 border-[1.5px] font-light text-center">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={checkboxState[item.id] || false}
+                                                    onChange={() => handleCheckboxChange(item.id)}
+                                                />
+                                            </td>
+                                            <td className="p-3 border-[1.5px] font-light">{item.bookingDate}</td>
+                                            <td className="p-3 border-[1.5px] font-light text-center">
+                                                <p className="text-[#1C77BF] font-medium">{item.order}</p>
+                                                {item.name}
+                                            </td>
+                                            <td className="p-3 border-[1.5px] font-light text-center">IDR</td>
+                                            <td className="p-3 border-[1.5px] font-light text-center">{item.amount.toLocaleString()}</td>
+                                            <td className="p-3 border-[1.5px] font-light text-center">{item.fee.toLocaleString()}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                                <tfoot>
+                                    <tr><td className="p-4" colSpan={6}></td></tr>
+                                    <tr>
+                                        <td className="p-3 border-[1.5px] font-medium text-right" colSpan={4}>
+                                            TOTAL (IDR)
+                                        </td>
+                                        <td className="p-3 border-[1.5px] font-semibold text-center">{totalAmount.toLocaleString()}</td>
+                                        <td className="p-3 border-[1.5px] font-semibold text-center">{totalFee.toLocaleString()}</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+
+                        <div className="text-xs sm:text-base">
                             <div className="p-3 bg-[#F6F6F6] text-[#a2a2a2]">
                                 BANK ACCOUNT
                             </div>
                             <div className="p-3 font-semibold border-b border-[#F6F6F6]">Bank Negara Indonesia (BNI)</div>
                         </div>
-                        <table className="w-full border-collapse">
+                        <table className="w-full border-collapse text-xs sm:text-base">
                             <thead>
                                 <tr>
                                     <th className="p-3 bg-[#F6F6F6] text-left text-[#a2a2a2] font-medium" colSpan={2}>
@@ -240,19 +245,19 @@ export default function Withdrawal(){
            <Tabs />
            <div className="px-2 lg:px-20 xl:px-52 bg-transparent pb-20">
                 <div className="bg-white px-5  lg:px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-[1.5rem] shadow-md">
-                    <div className="flex justify-between">
+                    <div className="sm:flex sm:justify-between mb-5 sm:mb-0">
                         <div>
-                            <div className="text-2xl font-medium flex mb-2">
-                                <div className="w-1 h-8 mr-2 bg-[#1B8BE3] rounded-r-full"></div>
+                            <div className="text-xl sm:text-2xl font-medium flex mb-2">
+                                <div className="w-1 h-6 sm:h-8 mr-2 bg-[#1B8BE3] rounded-r-full"></div>
                                 Rocky Fast Cruise
                             </div>
                             <div className="text-sm font-light px-2 py-1 inline-block rounded-sm text-[#0B8BEE] bg-[#0B8BEE1A] mb-8">Withdrawal</div>
                         </div>
-                        <div>
-                            <select name="" id="" className="bg-[#E6E6E6] px-5 py-2 rounded-lg cursor-pointer mr-3 font-sm">
+                        <div className="flex justify-end sm:block">
+                            <select name="" id="" className="bg-[#E6E6E6] px-2 py-1 text-xs sm:text-sm sm:px-5 sm:py-2 rounded-lg cursor-pointer mr-3">
                                 <option value="">Other Affiliates</option>
                             </select>
-                            <select name="" id="" className="bg-[#004174] text-white px-5 py-2 rounded-lg cursor-pointer font-sm" value={select} onChange={handleSelectChange}>
+                            <select name="" id="" className="bg-[#004174] text-white px-2 py-1 text-xs sm:text-sm sm:px-5 sm:py-2 rounded-lg cursor-pointer" value={select} onChange={handleSelectChange}>
                                 <option value={1}>Withdrawal</option>
                                 <option value={2}>History</option>
                             </select>

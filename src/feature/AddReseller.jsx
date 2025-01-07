@@ -99,8 +99,8 @@ export default function AddReseller() {
             <Tabs />
             <div className="px-2 lg:px-20 xl:px-52 bg-transparent pb-20">
                 <div className="bg-white px-5  lg:px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-[1.5rem] shadow-md">
-                    <div className="text-2xl font-medium flex mb-5">
-                        <div className="w-1 h-8 mr-2 bg-[#1B8BE3] rounded-r-full"></div>
+                    <div className="text-xl sm:text-2xl font-medium flex mb-2">
+                        <div className="w-1 h-6 sm:h-8 mr-2 bg-[#1B8BE3] rounded-r-full"></div>
                         Reseller Browser
                     </div>
                     <div className="bg-[#F6F6F6] p-3 flex items-center rounded-sm mb-5">

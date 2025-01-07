@@ -14,13 +14,15 @@ export default function Login(){
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center">
             {/* Kolom Kiri */}
-            <div className="flex justify-start relative ">
+            <div className="flex justify-start relative">
               <img 
                 src={hybridAccent} 
                 alt="Accent" 
                 className="
+                  mt-5
                   absolute 
                   top-[-12rem]
+                  md:mt-0
                   md:block 
                   md:left-[-30rem] md:top-[-24rem] md:max-w-3xl
                   lg:left-[-25rem] lg:top-[-24rem] lg:max-w-3xl
@@ -32,7 +34,7 @@ export default function Login(){
             {/* Kolom Kanan */}
             <div className="flex justify-center px-6 md:p-0 z-20">
               <div className="w-full max-w-md bg-white py-4 px-9 rounded-lg shadow-lg md:bg-transparent md:p-0 md:shadow-none">
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-9 md:mt-0">
                   <img src={hybridIcon} alt="" />
                 </div>
                 <div className="text-center font-normal text-2xl mt-6">Welcome Affilator</div>
