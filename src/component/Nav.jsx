@@ -25,15 +25,15 @@ export default function Nav() {
     };
 
     return (
-        <div className="flex flex-wrap justify-between items-center py-6 px-6 lg:px-20 xl:px-52 md:pb-6 md:pt-10 bg-white shadow-gray-300 shadow-md mb-10">
+        <div className="flex flex-wrap justify-between items-center py-6 px-4 lg:px-20 xl:px-52 md:pb-6 md:pt-10 bg-white shadow-gray-300 shadow-md mb-10">
             {!isMinMd ? (
                 <>
                     <div className="items-center text-xs sm:text-md mb-4 sm:mb-0">
-                        <img src={hybridIcon} alt="Hybrid Icon" className="mr-3 w-2/3 sm:w-full" />
-                        <div className="text-[#0B8BEE] ml-2">Affiliator System</div>
+                        <img src={hybridIcon} alt="Hybrid Icon" className="mr-[-1.5rem] sm:mr-3 w-2/3 sm:w-full" />
+                        <p className="text-[#0B8BEE] ml-1 sm:ml-2">Affiliator System</p>
                     </div>
 
-                    <div className="flex items-center bg-[#F8F8F8] p-3 rounded-sm mb-4 sm:mb-0">
+                    <div className="sm:flex items-center bg-[#F8F8F8] p-3 rounded-sm mb-4 sm:mb-0 hidden">
                         <div className="bg-slate-900 pt-2 pb-1 pl-5 pr-5 text-slate-50 text-center align-middle mr-3 hidden md:block">QR <br/> Code</div>
                         <div>
                             <div className="text-xs sm:text-sm mb-2">QR Affiliate Page</div>
@@ -67,19 +67,19 @@ export default function Nav() {
                     </div>
                 </div>
             )}
-
+            
             {/* Profile Section */}
-            <div className="flex items-start cursor-pointer" onClick={toggleProfileCard}>
+            <div className="flex items-start cursor-pointer mb-8" onClick={toggleProfileCard}>
                 <div className="block content-center pt-3">
                     <div className="text-[#004174] text-right text-xs sm:text-sm">Putu Abdi</div>
                     <div className="flex">
                         <div className="text-xs text-[#808080] font-light mr-1">Affiliator ID :</div>
-                        <div className="pl-2 pr-2 pt-[1px] pb-[2px] bg-[#004174] text-[0.5rem] sm:text-xs text-center text-white rounded-sm">AFF001</div>
+                        <div className="px-1 pt-[1px] pb-[2px] bg-[#004174] text-[0.5rem] sm:text-xs text-center text-white rounded-sm">AFF001</div>
                     </div>
                 </div>
                 <img 
                     src="https://media.licdn.com/dms/image/v2/D5603AQGaAOkGotaE3g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1669815154431?e=1740009600&v=beta&t=NBiadf-Ba0OXBtE-sV8-AoDl8TFmri0w4ZsCM1GyBOE" 
-                    className="w-10 h-10 rounded-full ml-3 mt-2 sm:mt-4" 
+                    className="w-10 h-10 rounded-full ml-1 mt-2 sm:ml-3 sm:mt-4" 
                     // alt="Profile" 
                 />
             </div>
@@ -130,7 +130,7 @@ export default function Nav() {
 
             {/* Profile Card */}
             {showProfileCard && (
-                <div className="absolute top-[7rem] sm:right-[13rem] bg-white shadow-[0_0_20px_rgba(0,0,0,0.2)] w-64 rounded-md z-10">
+                <div className="absolute top-[6rem] md:top-28 right-3 sm:right-[13rem] bg-white shadow-[0_0_20px_rgba(0,0,0,0.2)] w-64 rounded-md z-10">
                     {/* Bagian Header */}
                     <div className="border-b py-2 px-3 rounded-t-md flex justify-between">
                         <div className="text-sm font-normal">Account</div>
