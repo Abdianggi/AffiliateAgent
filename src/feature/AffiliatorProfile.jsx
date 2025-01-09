@@ -116,8 +116,8 @@ export default function AffiliatorProfile(){
            <Tabs />
            <div className="px-2 lg:px-20 xl:px-52 bg-transparent pb-20">
                 <div className="bg-white px-5  lg:px-20 border-t-[0.4rem] border-[#1B8BE3] py-10 rounded-[1.5rem] shadow-md">
-                    <div className="text-2xl font-medium flex mb-9">
-                        <div className="w-1 h-8 mr-2 bg-[#1B8BE3] rounded-r-full"></div>
+                    <div className="text-xl sm:text-2xl font-medium flex mb-9">
+                        <div className="w-1 h-6 sm:h-8 mr-2 bg-[#1B8BE3] rounded-r-full"></div>
                         Affiliator Profile
                     </div>
 
@@ -137,93 +137,97 @@ export default function AffiliatorProfile(){
                     /> */}
 
                     {/* Tabel Profile */}
-                    <table className="table table-bordered w-full text-sm mb-16 border border-gray-300">
-                        <tbody>
-                            <tr className="bg-[#E7F3FD] font-semibold">
-                                <td colSpan="2" className="p-3 border-[1.5px] border-r-0">Basic Profile</td>
-                                <td colSpan="2" className="p-3 cursor-pointer border-[1.5px] border-l-0 text-right" onClick={() => setIsModalOpen(true)}>
-                                    <i className="fa-solid fa-pen-to-square"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Name</td>
-                                <td colSpan="3" className="p-3 border-[1.5px]">Sinta Valela</td>
-                            </tr>
-                            <tr>
-                                <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Affiliator ID</td>
-                                <td className="p-3 border-[1.5px] font-light">AFF001</td>
-                                <td rowSpan="2" className="bg-[#F8F8F8] p-3 border-[1.5px]">
-                                    Address
-                                </td>
-                                <td rowSpan="2" className="p-3 align-middle border-[1.5px]">
-                                    Jalan Pondok indah padang bay no 763. Bali
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Email</td>
-                                <td className="p-3 border-[1.5px] font-light">sintavalela736@gmail.com</td>
-                            </tr>
-                            <tr>
-                                <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Website</td>
-                                <td className="p-3 border-[1.5px] font-light">sintavaela.com</td>
-                                <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Country</td>
-                                <td className="p-3 border-[1.5px] font-light">Indonesia</td>
-                            </tr>
-                            <tr>
-                                <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Phone</td>
-                                <td className="p-3 border-[1.5px] font-light">(+62) 8734862362</td>
-                                <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Category</td>
-                                <td className="p-3 border-[1.5px] font-light">Freelance</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="overflow-x-auto">
+                        <table className="table table-bordered w-full text-xs sm:text-sm mb-16 border border-gray-300">
+                            <tbody>
+                                <tr className="bg-[#E7F3FD] font-semibold">
+                                    <td colSpan="2" className="p-3 border-[1.5px] border-r-0">Basic Profile</td>
+                                    <td colSpan="2" className="p-3 cursor-pointer border-[1.5px] border-l-0 text-right" onClick={() => setIsModalOpen(true)}>
+                                        <i className="fa-solid fa-pen-to-square"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Name</td>
+                                    <td colSpan="3" className="p-3 border-[1.5px]">Sinta Valela</td>
+                                </tr>
+                                <tr>
+                                    <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Affiliator ID</td>
+                                    <td className="p-3 border-[1.5px] font-light">AFF001</td>
+                                    <td rowSpan="2" className="bg-[#F8F8F8] p-3 border-[1.5px]">
+                                        Address
+                                    </td>
+                                    <td rowSpan="2" className="p-3 align-middle border-[1.5px]">
+                                        Jalan Pondok indah padang bay no 763. Bali
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Email</td>
+                                    <td className="p-3 border-[1.5px] font-light">sintavalela736@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Website</td>
+                                    <td className="p-3 border-[1.5px] font-light">sintavaela.com</td>
+                                    <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Country</td>
+                                    <td className="p-3 border-[1.5px] font-light">Indonesia</td>
+                                </tr>
+                                <tr>
+                                    <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Phone</td>
+                                    <td className="p-3 border-[1.5px] font-light">(+62) 8734862362</td>
+                                    <td className="bg-[#F8F8F8] p-3 border-[1.5px]">Category</td>
+                                    <td className="p-3 border-[1.5px] font-light">Freelance</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
 
                     {/* Tabel Bank Accounts */}
-                    <table className="table table-bordered w-full text-sm mb-9 border border-gray-300">
-                        <thead>
-                            <tr className="bg-[#E7F3FD] font-semibold">
-                                <th className="p-3 border-[1.5px] border-r-0">Currency</th>
-                                <th className="p-3 border-[1.5px] border-r-0 text-start">Account Number</th>
-                                <th className="p-3 border-[1.5px] border-r-0 text-start">Bank Name</th>
-                                <th className="p-3 border-[1.5px] border-r-0">Status</th>
-                                <th className="p-3 border-[1.5px] border-l-0">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td className="p-3 border-[1.5px] font-light text-center">IDR</td>
-                                <td className="p-3 border-[1.5px] font-light">782463713874</td>
-                                <td className="p-3 border-[1.5px] font-light">BCA – Bank Central Asia</td>
-                                <td className="p-3 border-[1.5px] font-light text-center">
-                                    <span className="py-1 px-5 rounded-full bg-[#3EA31A1A] text-[#3EA31A]">
-                                        Active
-                                    </span>
-                                </td>
-                                <td className="p-3 border-[1.5px] font-light text-center">
-                                   <button className="bg-transparent text-[#ED1B24] font-light"><i class="fa-solid fa-trash mr-1"></i> Remove</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="p-3 border-[1.5px] font-light text-center">IDR</td>
-                                <td className="p-3 border-[1.5px] font-light">378427874343</td>
-                                <td className="p-3 border-[1.5px] font-light">BNI – Bank Negara Indonesia</td>
-                                <td className="p-3 border-[1.5px] font-light text-center">
-                                    <span className="py-1 px-5 bg-[#FF99001A] text-[#FF9900] rounded-full">
-                                        Review
-                                    </span>
-                                </td>
-                                <td className="p-3 border-[1.5px] font-light text-center">
+                    <div className="overflow-x-auto">
+                        <table className="table table-bordered w-full text-xs sm:text-sm mb-9 border border-gray-300">
+                            <thead>
+                                <tr className="bg-[#E7F3FD] font-semibold">
+                                    <th className="p-3 border-[1.5px] border-r-0">Currency</th>
+                                    <th className="p-3 border-[1.5px] border-r-0 text-start">Account Number</th>
+                                    <th className="p-3 border-[1.5px] border-r-0 text-start">Bank Name</th>
+                                    <th className="p-3 border-[1.5px] border-r-0">Status</th>
+                                    <th className="p-3 border-[1.5px] border-l-0">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td className="p-3 border-[1.5px] font-light text-center">IDR</td>
+                                    <td className="p-3 border-[1.5px] font-light">782463713874</td>
+                                    <td className="p-3 border-[1.5px] font-light">BCA – Bank Central Asia</td>
+                                    <td className="p-3 border-[1.5px] font-light text-center">
+                                        <span className="py-1 px-5 rounded-full bg-[#3EA31A1A] text-[#3EA31A]">
+                                            Active
+                                        </span>
+                                    </td>
+                                    <td className="p-3 border-[1.5px] font-light text-center">
                                     <button className="bg-transparent text-[#ED1B24] font-light"><i class="fa-solid fa-trash mr-1"></i> Remove</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="p-3 border-[1.5px] font-light text-center">IDR</td>
+                                    <td className="p-3 border-[1.5px] font-light">378427874343</td>
+                                    <td className="p-3 border-[1.5px] font-light">BNI – Bank Negara Indonesia</td>
+                                    <td className="p-3 border-[1.5px] font-light text-center">
+                                        <span className="py-1 px-5 bg-[#FF99001A] text-[#FF9900] rounded-full">
+                                            Review
+                                        </span>
+                                    </td>
+                                    <td className="p-3 border-[1.5px] font-light text-center">
+                                        <button className="bg-transparent text-[#ED1B24] font-light"><i class="fa-solid fa-trash mr-1"></i> Remove</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
 
                     {/* Tombol Add */}
                     <div className="mt-4 flex justify-end">
-                        <button className="bg-[#449D44] text-white py-1 px-5 rounded-lg" onClick={() => setIsAddNewBankModal(true)}>
+                        <button className="bg-[#449D44] text-white text-xs px-2 py-1 sm:px-5 sm:text-sm rounded-lg" onClick={() => setIsAddNewBankModal(true)}>
                         + Add
                         </button>
                     </div>

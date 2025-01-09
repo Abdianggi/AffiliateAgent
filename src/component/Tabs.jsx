@@ -15,24 +15,31 @@ export default function Tabs({disabled}) {
   };
 
   return (
-    <div className="flex space-x-1 border-gray-300 px-12 md:px-52 lg:px-72">
+    <div className="flex space-x-1 border-gray-300 px-12 md:px-32 xl:px-72">
       {tabs.map((tab) => (
         <NavLink
           key={tab.id}
           to={tab.path}
           onClick={handleClick}
           className={({ isActive }) =>
-            `py-1 sm:py-2 px-2 sm:px-4 text-sm font-normal rounded-t-lg${disabled ? `cursor-not-allowed opacity-50` : ``} ${
+            `flex py-1 sm:py-2 px-3 sm:px-4 text-sm font-normal rounded-t-lg${disabled ? `cursor-not-allowed opacity-50` : ``} ${
               isActive
                 ? "border-blue-500 text-white bg-[#1B8BE3]"
                 : "border-transparent text-black bg-white hover:text-[#1B8BE3] hover:border-gray-300"
             }`
           }
         >
-          {tab.icon}
-          <div className="hidden text-xs sm:inline-block sm:text-sm sm:ml-2">
-            {tab.label}
-          </div>
+            {tab.icon}
+            <div className="hidden text-xs sm:inline-block sm:text-sm sm:ml-2">
+              {tab.label}
+            </div>
+{/*             
+            <div className="hidden sm:block mr-1">
+              {tab.icon}
+            </div>
+            <div className="text-[0.7rem] sm:text-sm">
+              {tab.label}
+            </div> */}
         </NavLink>
       ))}
     </div>
