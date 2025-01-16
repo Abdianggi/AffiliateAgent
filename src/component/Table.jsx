@@ -57,8 +57,8 @@ const Table = ({ title, headers, data, isStatic, onEditClick, onRemoveClick }) =
                         <span
                           className={`py-1 px-5 rounded-full ${
                             row[header.key] === "Active"
-                              ? "bg-[#3EA31A1A] text-[#3EA31A]"
-                              : "bg-[#FF99001A] text-[#FF9900]"
+                              ? "bg-hysuccess-100 text-hysuccess-500"
+                              : "bg-hywarning-100 text-hywarning-500"
                           }`}
                         >
                           {row[header.key]}

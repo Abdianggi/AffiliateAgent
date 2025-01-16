@@ -6,6 +6,8 @@ import Tabs from "../component/Tabs";
 import Table from "../component/Table";
 import FormModal from "../component/FormModal";
 import bankData from "../data/indonesianBanks.json";
+import Badge from "../component/Badge";
+import Button from "../component/ButtonHybrid";
 
 export default function AffiliatorProfile(){
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -199,9 +201,7 @@ export default function AffiliatorProfile(){
                                     <td className="p-3 border-[1.5px] font-light">782463713874</td>
                                     <td className="p-3 border-[1.5px] font-light">BCA – Bank Central Asia</td>
                                     <td className="p-3 border-[1.5px] font-light text-center">
-                                        <span className="py-1 px-5 rounded-full bg-[#3EA31A1A] text-[#3EA31A]">
-                                            Active
-                                        </span>
+                                        <Badge value="Review" className="py-1 px-5 rounded-full" bgColor="bg-hysuccess-100" textColor="text-hysuccess-500" />
                                     </td>
                                     <td className="p-3 border-[1.5px] font-light text-center">
                                     <button className="bg-transparent text-[#ED1B24] font-light"><i class="fa-solid fa-trash mr-1"></i> Remove</button>
@@ -212,9 +212,7 @@ export default function AffiliatorProfile(){
                                     <td className="p-3 border-[1.5px] font-light">378427874343</td>
                                     <td className="p-3 border-[1.5px] font-light">BNI – Bank Negara Indonesia</td>
                                     <td className="p-3 border-[1.5px] font-light text-center">
-                                        <span className="py-1 px-5 bg-[#FF99001A] text-[#FF9900] rounded-full">
-                                            Review
-                                        </span>
+                                        <Badge value="Review" className="py-1 px-5 rounded-full" bgColor="bg-hywarning-100" textColor="text-hywarning-500" />
                                     </td>
                                     <td className="p-3 border-[1.5px] font-light text-center">
                                         <button className="bg-transparent text-[#ED1B24] font-light"><i class="fa-solid fa-trash mr-1"></i> Remove</button>
@@ -227,9 +225,7 @@ export default function AffiliatorProfile(){
 
                     {/* Tombol Add */}
                     <div className="mt-4 flex justify-end">
-                        <button className="bg-[#449D44] text-white text-xs px-2 py-1 sm:px-5 sm:text-sm rounded-lg" onClick={() => setIsAddNewBankModal(true)}>
-                        + Add
-                        </button>
+                        <Button type={`button`} variant={`hysuccess`} className={`text-xs px-2 py-1 sm:px-5 sm:text-sm rounded-lg`} text={`+ Add`}/>
                     </div>
                 </div>
             </div>

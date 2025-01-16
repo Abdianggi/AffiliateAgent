@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 
 export default function Tabs({disabled}) {
   const tabs = [
-    { id: "dashboard", label: "Dashboard", path: "/dashboard" , icon : <i class="fa-solid fa-users text-xs px-[0.05rem]"></i>},
-    { id: "booking", label: "Booking", path: "/booking" , icon : <i class="fa-solid fa-calendar-days text-xs px-[0.2rem]"></i>},
-    { id: "withdrawal", label: "Withdrawal", path: "/withdrawal" , icon : <i class="fa-solid fa-money-bill text-xs px-[0.1rem]"></i>},
-    { id: "affiliator", label: "Profile", path: "/affiliator-profile" , icon : <i class="fa-regular fa-user text-xs px-[0.2rem]"></i>},
+    { id: "dashboard", label: "Dashboard", path: "/dashboard" , icon : <i class="fa-solid fa-users text-xs px-[0.05rem] sm:px-0 sm:mt-[0.15rem] mt-0"></i>},
+    { id: "booking", label: "Booking", path: "/booking" , icon : <i class="fa-solid fa-calendar-days text-xs px-[0.2rem] sm:px-0 sm:mt-[0.15rem] mt-0"></i>},
+    { id: "withdrawal", label: "Withdrawal", path: "/withdrawal" , icon : <i class="fa-solid fa-money-bill text-xs px-[0.1rem] sm:px-0 sm:mt-[0.15rem] mt-0"></i>},
+    { id: "affiliator", label: "Profile", path: "/affiliator-profile" , icon : <i class="fa-regular fa-user text-xs px-[0.2rem] sm:px-0 sm:mt-[0.15rem] mt-0"></i>},
   ];
 
   const handleClick = (e) => {
@@ -39,7 +39,7 @@ export default function Tabs({disabled}) {
             to={tab.path}
             onClick={handleClick}
             className={({ isActive }) =>
-              `flex p-2 rounded-full mx-2 sm:mx-0 sm:py-2 sm:px-4 text-sm font-normal sm:rounded-none sm:rounded-t-lg ${disabled ? `cursor-not-allowed opacity-50` : ``} ${
+              `flex p-2 rounded-full mx-1 sm:mx-0 sm:py-2 sm:px-4 text-sm font-normal sm:rounded-none sm:rounded-t-lg ${disabled ? `cursor-not-allowed opacity-50` : ``} ${
                 isActive
                   ? "border-blue-500 text-white bg-[#1B8BE3]"
                   : "border-transparent text-black bg-white hover:text-[#1B8BE3] hover:border-gray-300"

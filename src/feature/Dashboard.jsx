@@ -1,11 +1,56 @@
 // BES-AF-03-0-PAGE
 import CardAffiliate from "../component/CardAffiliate";
 import CardBasic from "../component/CardBasic";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Button from "../component/ButtonHybrid";
 import Nav from "../Component/Nav";
 import Tabs from "../component/Tabs";
 
 export default function Dashboard() {
+    const navigate = useNavigate();
+    const toAddReseller = () => {
+        navigate('/add-reseller');
+    }
+
+    const cardAffiliateData = [
+        {
+            status: "1",
+            companyName: "Rocky Fast Cruise",
+            resellerId: "AFLSV001001RCF",
+            qrText: "QR Reseller Page",
+            qrColor: "#0B8BEE",
+            details: [
+                { color: "#004174", title: "Booking", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "20" },
+                { color: "#0B8BEE", title: "Sales", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 10.000.000" },
+                { color: "#0B8BEE", title: "Commision Fee", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 3.000.000" },
+            ],
+        },
+        {
+            status: "1",
+            companyName: "Gangga Express",
+            resellerId: "AFLSV001001GES",
+            qrText: "QR Reseller Page",
+            qrColor: "#0B8BEE",
+            details: [
+                { color: "#004174", title: "Booking", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "20" },
+                { color: "#0B8BEE", title: "Sales", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 10.000.000" },
+                { color: "#0B8BEE", title: "Commision Fee", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 3.000.000" },
+            ],
+        },
+        {
+            status: "0",
+            companyName: "Semaya One",
+            resellerId: "AFLSV001001SMO",
+            qrText: "QR Reseller Page",
+            qrColor: "#0B8BEE",
+            details: [
+                { color: "#004174", title: "Booking", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "20" },
+                { color: "#0B8BEE", title: "Sales", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 10.000.000" },
+                { color: "#0B8BEE", title: "Commision Fee", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 3.000.000" },
+            ],
+        },
+    ];
+    
     return (
         <div className="bg-[#F6F6F6] min-h-screen">
             <Nav />
@@ -21,52 +66,20 @@ export default function Dashboard() {
                 <div className="bg-[#FFFFFF] px-2 lg:px-20 py-10 rounded-[1.5rem] shadow-md mt-[-1.5rem]">
                     <div className="flex justify-between mb-8">
                         <div className="text-lg font-semibold">Affiliate : </div>
-                        <Link
-                            to="/add-reseller"
-                            className="bg-[#449D44] text-white text-sm font-light py-1 px-2 rounded-md"
-                        >
-                            + Add Reseller
-                        </Link>
+                        {/* <Link to="/add-reseller" className="bg-hysuccess text-white text-sm font-light py-1 px-2 rounded-md">+ Add Reseller</Link> */}
+                        <Button type={`button`} variant={`hysuccess`} className={`py-1 px-2 rounded-md text-sm font-light`} text={`+ Add Reseller`} onClick={toAddReseller}/>
                     </div>
-                    <CardAffiliate
-                        status="Active"
-                        statusColor="#3EA31A"
-                        companyName="Rocky Fast Cruise"
-                        resellerId="AFLSV001001RCF"
-                        qrText="QR Reseller Page"
-                        qrColor="#0B8BEE"
-                        details={[
-                            { color: "#004174", title: "Booking", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "20" },
-                            { color: "#0B8BEE", title: "Sales", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 10.000.000" },
-                            { color: "#0B8BEE", title: "Commision Fee", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 3.000.000" },
-                        ]}
-                    />
-                    <CardAffiliate
-                        status="Active"
-                        statusColor="#3EA31A"
-                        companyName="Rocky Fast Cruise"
-                        resellerId="AFLSV001001RCF"
-                        qrText="QR Reseller Page"
-                        qrColor="#0B8BEE"
-                        details={[
-                            { color: "#004174", title: "Booking", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "20" },
-                            { color: "#0B8BEE", title: "Sales", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 10.000.000" },
-                            { color: "#0B8BEE", title: "Commision Fee", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 3.000.000" },
-                        ]}
-                    />
-                    <CardAffiliate
-                        status="Active"
-                        statusColor="#3EA31A"
-                        companyName="Rocky Fast Cruise"
-                        resellerId="AFLSV001001RCF"
-                        qrText="QR Reseller Page"
-                        qrColor="#0B8BEE"
-                        details={[
-                            { color: "#004174", title: "Booking", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "20" },
-                            { color: "#0B8BEE", title: "Sales", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 10.000.000" },
-                            { color: "#0B8BEE", title: "Commision Fee", subtitle: "1 Sep 2024 - 27 Sep 2024", value: "IDR 3.000.000" },
-                        ]}
-                    />
+                    {cardAffiliateData.map((data, index) => (
+                        <CardAffiliate
+                            key={index}
+                            status={data.status}
+                            companyName={data.companyName}
+                            resellerId={data.resellerId}
+                            qrText={data.qrText}
+                            qrColor={data.qrColor}
+                            details={data.details}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

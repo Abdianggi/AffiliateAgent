@@ -1,3 +1,4 @@
+// BES-AF-02-0-PAGE - UPLOAD DOCUMENT
 import CardBasic from "../component/CardBasic";
 import Nav from "../Component/Nav";
 import Tabs from "../component/Tabs";
@@ -28,10 +29,10 @@ export default function VerifyInformation() {
                 return (
                     <div>
                         <div className="block sm:flex sm:justify-between mb-14">
-                            <div className="text-sm sm:text-2xl font-medium flex text-[#004174]">
+                            <div className="text-sm sm:text-2xl font-medium flex text-hybrid">
                                 Verify your Information
                             </div>
-                            <div className="text-xs w-60 text-center mt-2 sm:mt-0 sm:w-auto sm:text-sm font-light text-[#3EA31A] bg-[#3EA31A0A] border-[1px] border-[#3EA31A] py-1 px-2 sm:py-2 sm:px-5 rounded-lg">All data is safety stored and encrypted</div>
+                            <div className="text-xs w-60 text-center mt-2 sm:mt-0 sm:w-auto sm:text-sm font-light text-hysuccess-500 bg-[#3EA31A0A] border-[1px] border-hysuccess-500 py-1 px-2 sm:py-2 sm:px-5 rounded-lg">All data is safety stored and encrypted</div>
                         </div>
 
                         <Stepper steps={steps} />
@@ -122,8 +123,10 @@ export default function VerifyInformation() {
                     </div>
                 );
             case 2:
+                // BES-AF-02-0-PAGE - BANK VERIFICATION
                 return <BankInformation onBack={() => setStep(1)} onContinue={() => setStep(3)}/>;
             case 3:
+                // BES-AF-02-0-PAGE - BANK VERIFICATION
                 return <VerificationDone onBack={() => setStep(2)} onContinue={toDashboard}/>;
             default:
                 return null;

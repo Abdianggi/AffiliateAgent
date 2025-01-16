@@ -1,6 +1,7 @@
 import { useState } from "react";
 import hybridIcon from "../assets/hybrid.svg";
 import { useMediaQuery } from "react-responsive";
+import Button from "./ButtonHybrid";
 
 export default function Nav() {
     const isMinMd = useMediaQuery({ query: "(min-width: 768px)" });
@@ -38,7 +39,7 @@ export default function Nav() {
                         <div>
                             <div className="text-xs sm:text-sm mb-2">QR Affiliate Page</div>
                             <button
-                                className="bg-[#004174] text-white text-xs px-1 sm:px-3 py-1 rounded-sm"
+                                className="bg-hybrid text-white text-xs px-1 sm:px-3 py-1 rounded-sm"
                                 onClick={toggleModal}
                             >
                                 View
@@ -57,12 +58,7 @@ export default function Nav() {
                         <div className="bg-slate-900 pt-2 pb-1 pl-5 pr-5 text-slate-50 text-center align-middle mr-3 hidden md:block">QR <br/> Code</div>
                         <div>
                             <div className="text-sm mb-2">QR Affiliate Page</div>
-                            <button
-                                className="bg-[#004174] text-white text-xs px-3 py-1 rounded-sm"
-                                onClick={toggleModal}
-                            >
-                                View
-                            </button>
+                            <Button type={`button`} variant={`hybrid`} text={`View`} className={`text-xs px-1 sm:px-3 py-1 rounded-sm`} onClick={toggleModal} />
                         </div>
                     </div>
                 </div>
@@ -71,10 +67,10 @@ export default function Nav() {
             {/* Profile Section */}
             <div className="flex items-start cursor-pointer mb-8" onClick={toggleProfileCard}>
                 <div className="block content-center pt-3">
-                    <div className="text-[#004174] text-right text-xs sm:text-sm">Putu Abdi</div>
+                    <div className="text-hybrid text-right text-xs sm:text-sm">Putu Abdi</div>
                     <div className="flex">
                         <div className="text-xs text-[#808080] font-light mr-1">Affiliator ID :</div>
-                        <div className="px-1 pt-[1px] pb-[2px] bg-[#004174] text-[0.5rem] sm:text-xs text-center text-white rounded-sm">AFF001</div>
+                        <div className="px-1 pt-[1px] pb-[2px] bg-hybrid text-[0.5rem] sm:text-xs text-center text-white rounded-sm">AFF001</div>
                     </div>
                 </div>
                 <img 

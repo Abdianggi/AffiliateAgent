@@ -1,3 +1,4 @@
+// BES-AF-03-4-PAGE
 import Nav from "../Component/Nav";
 import Tabs from "../component/Tabs";
 import hybridIcon from "../assets/hybrid.svg";
@@ -82,7 +83,7 @@ function ResellerTable({ data }) {
                             </td>
                             <td className="block sm:table-cell border border-[#cccccc] text-center">
                                 <button
-                                    className="bg-[#449D44] text-white text-sm font-light p-2 rounded-md"
+                                    className="bg-hysuccess text-white text-sm font-light p-2 rounded-md"
                                     href="/add-reseller"
                                     data-discover="true"
                                 >
@@ -127,7 +128,7 @@ export default function AddReseller() {
                             className="text-xs sm:text-sm sm:h-12 rounded-md border-[1px] border-[#CCCCCC] ml-3 mr-1 sm:mr-4 p-1 w-1/2 sm:p-3 font-extralight focus:border-[#1B8BE3] focus:border-2 focus:outline-none"
                             placeholder="RCF00918"
                         />
-                        <button className="bg-[#004174] sm:h-12 text-white text-xs p-1 sm:text-sm sm:px-5 font-light rounded-md">
+                        <button className="bg-hybrid sm:h-12 text-white text-xs p-1 sm:text-sm sm:px-5 font-light rounded-md">
                             <i className="fa-solid fa-magnifying-glass mr-1"></i>Search
                         </button>
                     </div>

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "../component/ButtonHybrid";
+import iconMagnifyingGlass from "../assets/iconMagnifyingGlass.svg";
 
 export default function WithdrawalHistory(){
     const data = [
@@ -54,25 +56,10 @@ export default function WithdrawalHistory(){
                 />
             </div>
             <div className="flex items-end justify-end">
-                <button className="bg-[#004174] text-white px-2 sm:px-9 py-[0.4rem] rounded text-xs font-extralight mt-1 flex">
-                    <svg
-                        width="13"
-                        height="13"
-                        className="sm:mt-[0.1rem] mr-1"
-                        viewBox="0 0 13 13"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M11.4996 11.5L10.4996 10.5M6.2496 11C6.87338 11 7.49105 10.8771 8.06735 10.6384C8.64365 10.3997 9.16728 10.0498 9.60836 9.60876C10.0494 9.16768 10.3993 8.64404 10.638 8.06775C10.8767 7.49145 10.9996 6.87378 10.9996 6.25C10.9996 5.62622 10.8767 5.00855 10.638 4.43225C10.3993 3.85596 10.0494 3.33232 9.60836 2.89124C9.16728 2.45016 8.64365 2.10028 8.06735 1.86157C7.49105 1.62286 6.87338 1.5 6.2496 1.5C4.98983 1.5 3.78164 2.00044 2.89085 2.89124C2.00005 3.78204 1.4996 4.99022 1.4996 6.25C1.4996 7.50978 2.00005 8.71796 2.89085 9.60876C3.78164 10.4996 4.98983 11 6.2496 11Z"
-                            stroke="white"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
+                <Button type={`button`} variant={`hybrid`} className={`px-2 sm:px-9 py-[0.4rem] rounded text-xs font-extralight mt-1 flex`}>
+                    <img src={iconMagnifyingGlass} alt="hybridMagnifyingGlass" width={13} height={13} className="mr-1"/>
                     OK
-                </button>
+                </Button>
             </div>
         </div>
 
@@ -103,9 +90,9 @@ export default function WithdrawalHistory(){
                                 <span
                                     className={`py-1 px-5 rounded-full ${
                                         item.status === "Settled"
-                                        ? "bg-[#3EA31A1A] text-[#3EA31A]"
+                                        ? "bg-hysuccess-100 text-hysuccess-500"
                                         : item.status === "Processed"
-                                        ? "bg-[#FF99001A] text-[#FF9900]"
+                                        ? "bg-hywarning-100 text-hywarning-500"
                                         : "bg-[#A31A1A1A] text-[#A31A1A]"
                                     }`}
                                 >

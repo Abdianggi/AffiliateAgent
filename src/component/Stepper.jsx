@@ -8,7 +8,7 @@ export default function Stepper({ steps }) {
                             <div className="flex flex-col items-center">
                                 <div
                                     className={`w-6 h-6 text-xs sm:w-8 sm:h-8 sm:text-sm rounded-full flex items-center justify-center mx-5 ${
-                                        step.active ? "bg-[#3EA31A] text-white" : "bg-gray-300 text-white"
+                                        step.active ? "bg-hysuccess-500 text-white" : "bg-gray-300 text-white"
                                     }`}
                                 >
                                     {index + 1}
@@ -19,7 +19,7 @@ export default function Stepper({ steps }) {
                             {index < steps.length - 1 && (
                                 <div
                                 className={`flex-1 h-0.5 
-                                    ${steps[index + 1].active ? "bg-[#3EA31A]" : "bg-gray-300"}`
+                                    ${steps[index + 1].active ? "bg-hysuccess-500" : "bg-gray-300"}`
                                 }
                                 ></div>
                             )}
