@@ -204,7 +204,7 @@ export default function AffiliatorProfile(){
                                         <Badge value="Review" className="py-1 px-5 rounded-full" bgColor="bg-hysuccess-100" textColor="text-hysuccess-500" />
                                     </td>
                                     <td className="p-3 border-[1.5px] font-light text-center">
-                                    <button className="bg-transparent text-[#ED1B24] font-light"><i class="fa-solid fa-trash mr-1"></i> Remove</button>
+                                    <button className="bg-transparent text-[#ED1B24] font-light"><i className="fa-solid fa-trash mr-1"></i> Remove</button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -215,7 +215,7 @@ export default function AffiliatorProfile(){
                                         <Badge value="Review" className="py-1 px-5 rounded-full" bgColor="bg-hywarning-100" textColor="text-hywarning-500" />
                                     </td>
                                     <td className="p-3 border-[1.5px] font-light text-center">
-                                        <button className="bg-transparent text-[#ED1B24] font-light"><i class="fa-solid fa-trash mr-1"></i> Remove</button>
+                                        <button className="bg-transparent text-[#ED1B24] font-light"><i className="fa-solid fa-trash mr-1"></i> Remove</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -225,7 +225,7 @@ export default function AffiliatorProfile(){
 
                     {/* Tombol Add */}
                     <div className="mt-4 flex justify-end">
-                        <Button type={`button`} variant={`hysuccess`} className={`text-xs px-2 py-1 sm:px-5 sm:text-sm rounded-lg`} text={`+ Add`}/>
+                        <Button type={`button`} variant={`hysuccess`} className={`text-xs px-2 py-1 sm:px-5 sm:text-sm rounded-lg`} text={`+ Add`} onClick={() => setIsAddNewBankModal(true)}/>
                     </div>
                 </div>
             </div>

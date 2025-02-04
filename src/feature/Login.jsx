@@ -2,8 +2,13 @@
 import { useState } from "react";
 import hybridAccent from "../assets/hybridAccent.svg";
 import hybridIcon from "../assets/hybrid.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
+    const navigate = useNavigate();
+    const toVerification = () => {
+        navigate('/verification');
+    }
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePassword = () => {
@@ -89,6 +94,7 @@ export default function Login(){
                   <button
                     type="submit"
                     className="mt-6 w-full px-4 py-2 text-white bg-black rounded-md hover:bg-slate-800 focus:outline-none focus:ring focus:ring-blue-300"
+                    onClick={toVerification}
                   >
                     Login
                   </button>
